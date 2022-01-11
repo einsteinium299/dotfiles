@@ -1,0 +1,56 @@
+# ACTIONS
+#auto-reload yes
+
+# THEME
+color listnormal white default
+
+color listnormal_unread green default
+#color listnormal_unread magenta default
+
+#color listfocus_unread yellow default bold
+color listfocus_unread blue default reverse bold
+
+#color listfocus blue default reverse bold
+color listfocus white cyan bold
+
+color info red black bold
+
+color article white default
+
+color info default default reverse
+
+# HIGHLIGHT ARTICLE
+
+highlight all "---.*---" yellow
+highlight feedlist ".*(0/0))" black
+highlight article "(^Feed:.*|^Title:.*|^Author:.*)" cyan default bold
+highlight article "(^Link:.*|^Date:.*)" default default
+highlight article "https?://[^ ]+" green default
+highlight article "^(Title):.*$" cyan default
+highlight article "\\[[0-9][0-9]*\\]" magenta default bold
+highlight article "\\[image\\ [0-9]+\\]" green default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
+highlight article ":.*\\(link\\)$" cyan default
+highlight article ":.*\\(image\\)$" magenta default
+highlight article ":.*\\(embedded flash\\)$" magenta default
+
+
+# NAVIGATION
+bind-key j down feedlist
+bind-key k up feedlist
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key j down article
+bind-key k up article
+bind-key g home
+bind-key G end
+bind-key l open
+bind-key h quit
+
+# APPLICATIONS
+browser firefox
+
+# DISPLAY
+text-width 80
