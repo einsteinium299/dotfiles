@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+import worldometer
+
+population = worldometer.current_world_population()
+count = population['current_world_population']
+
+count = str(count)
+
+billion = count[0:1]
+million = count[1:4]
+thousand = count[4:7]
+ones = count[7:10]
+
+print(billion + '.' + million + '.' + thousand + '.' + ones)
