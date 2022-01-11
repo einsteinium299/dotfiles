@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 
 import worldometer
-import locale
-
-locale.setlocale(locale.LC_ALL, 'no_no')
 
 population = worldometer.current_world_population()
 count = population['current_world_population']
 
-print(f'{count:n}')
+print(format(count, ","))
