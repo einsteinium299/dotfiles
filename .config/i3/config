@@ -13,12 +13,12 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:Hack Nerd Font 11
+font pango:Hack Nerd Font 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
-#font pango:JetBrainsMonoNL-ExtraBoldItalic 10 
+# font pango:DejaVu Sans Mono 10
+# font pango:JetBrainsMonoNL-ExtraBoldItalic 10 
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -52,9 +52,9 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+x kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec --no-startup-id dmenu_run -nb black -sb tomato -fn monospace -l 5
+bindsym $mod+d exec --no-startup-id dmenu_run -nb black -sb tomato -fn monospace -l 5
 # A more modern dmenu replacement is rofi:
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+i exec --no-startup-id rofi -show drun
 
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -199,7 +199,7 @@ gaps outer 10
 bar {
 	status_command /usr/bin/bumblebee-status \
 		-m cmus network_traffic uptime weather disk cpu memory shell time \
-		-p shell.command='titlebar' shell.interval='10800' weather.location='' time.format="%H:%M" disk.path="/home" \
+		-p shell.command='titlebar' shell.interval='10800' weather.location='Antarctica' time.format="%H:%M" disk.path="/home" \
 		-t iceberg-powerline
 	position top
     colors {
@@ -229,3 +229,4 @@ client.background       #ffffff
 
 exec_always feh --bg-center $HOME/doc/wall/SolColonyEarthMoon.png
 exec_always --no-startup-id picom &
+exec --no-startup-id dunst -config /home/stijn/.config/dunst/dunstrc
